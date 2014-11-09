@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <!--<script type="application/javascript">-->
+        <!--// create a map in the "map" div, set the view to a given place and zoom-->
+        <!--var map = L.map('map').setView([45.43373, 12.33901], 9);-->
+
+        <!--// add an OpenStreetMap tile layer-->
+        <!--L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {-->
+            <!--attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'-->
+        <!--}).addTo(map);-->
+
+        <!--// add a marker in the given location, attach some popup content to it and open the popup-->
+        <!--L.marker([45.434, 12.338]).addTo(map)-->
+                <!--.bindPopup('A pretty CSS3 popup. <br> Easily customizable.')-->
+                <!--.openPopup();-->
+    <!--</script>-->
+    <div class="jumbotron map" id="map">
+    </div>
+    <div class="row">
+        <!--Body content-->
+        <ul class="phones">
+            <li ng-repeat="gift in gifts" class="thumbnail">
+                <map-marker gift="{{gift}}"></map-marker>
+                <!--directive: mapmarker gift-->
+                <a href="#/phones/{{gift.id}}" class="thumb"><img ng-src="{{gift.imageUrl}}"></a>
+                <a href="#/phones/{{gift.id}}">{{gift.name}}</a>
+
+                <p>{{gift.snippet}}</p>
+            </li>
+        </ul>
+
+    </div>
+</div>
