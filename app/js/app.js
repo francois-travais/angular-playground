@@ -11,7 +11,8 @@ var phonecatApp = angular.module('phonecatApp', [
   'phonecatServices',
 
     'weddingControllers',
-    'weddingServices'
+    'weddingServices',
+    'weddingDirectives'
 ]);
 
 phonecatApp.config(['$routeProvider',

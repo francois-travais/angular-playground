@@ -1,32 +1,25 @@
 <div class="container-fluid">
-    <!--<script type="application/javascript">-->
-        <!--// create a map in the "map" div, set the view to a given place and zoom-->
-        <!--var map = L.map('map').setView([45.43373, 12.33901], 9);-->
-
-        <!--// add an OpenStreetMap tile layer-->
-        <!--L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {-->
-            <!--attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'-->
-        <!--}).addTo(map);-->
-
-        <!--// add a marker in the given location, attach some popup content to it and open the popup-->
-        <!--L.marker([45.434, 12.338]).addTo(map)-->
-                <!--.bindPopup('A pretty CSS3 popup. <br> Easily customizable.')-->
-                <!--.openPopup();-->
-    <!--</script>-->
-    <div class="jumbotron map" id="map">
-    </div>
-    <div class="row">
+    <div class="jumbotron map" id="map"></div>
+    <div class="container-fluid">
         <!--Body content-->
-        <ul class="phones">
-            <li ng-repeat="gift in gifts" class="thumbnail">
-                <map-marker gift="{{gift}}"></map-marker>
-                <!--directive: mapmarker gift-->
-                <a href="#/phones/{{gift.id}}" class="thumb"><img ng-src="{{gift.imageUrl}}"></a>
-                <a href="#/phones/{{gift.id}}">{{gift.name}}</a>
-
-                <p>{{gift.snippet}}</p>
-            </li>
-        </ul>
+        <div ng-repeat="gift in gifts" class="panel panel-default">
+            <map-marker gift="{{gift}}"></map-marker>
+            <div class="panel-heading"><a href="#/phones/{{gift.id}}"><h4>{{gift.name}}</h4></a></div>
+            <div class="panel-body">
+                <div class="row">
+                    <a class="col-md-4" href="#/phones/{{gift.id}}"><img class="img-thumbnail img-responsive" ng-src="{{gift.imageUrl}}"></a>
+                    <div class="col-md-8">
+                        <div class="lead">{{gift.snippet}}</div>
+                        <div class="lead"><span style="font-weight: bold;">Prix:</span> {{gift.price}} €</div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                                0%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 </div>

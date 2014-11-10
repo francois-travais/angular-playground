@@ -27,12 +27,13 @@ weddingControllers.controller('GiftListCtrl', ['$scope', 'Gift',
     function ($scope, Gift) {
         $scope.gifts = Gift.query();
 
-        var map = L.map('map').setView([45.43373, 12.33901], 9);
+        var map = L.map('map').setView([43.5, 12], 6);
 
         // add an OpenStreetMap tile layer
-        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
+        L.tileLayer.provider('OpenStreetMap.Mapnik')
+            .addTo(map);
+        //L.tileLayer.provider('MapQuestOpen.OSM')
+        //    .addTo(map);
 
         $scope.leaflet_map = map;
     }]);
