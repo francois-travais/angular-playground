@@ -30,11 +30,11 @@ phonecatApp.config(['$routeProvider',
             templateUrl: 'partials/gift-list.html',
             controller: 'GiftListCtrl'
         }).
-        when('/gifts/:giftId', {
-          templateUrl: 'partials/phone-detail.html',
-          controller: 'PhoneDetailCtrl'
+        when('/home', {
+          templateUrl: 'partials/home.html',
+          controller: 'Home'
         }).
       otherwise({
-        redirectTo: '/gifts'
+        redirectTo: '/home'
       });
   }]);

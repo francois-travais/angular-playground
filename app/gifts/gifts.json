@@ -1,6 +1,7 @@
 [
   {
     "price": 500,
+    "booked": 20,
     "id": "avion-paris-rome",
     "imageUrl": "img/gifts/avion-01.jpg",
     "name": "Billet d'avion Paris-Rome",
@@ -9,6 +10,7 @@
   },
   {
     "price": 10,
+    "booked": 2,
     "id": "cafe-saint-marc-venise",
     "imageUrl": "img/gifts/cafe_place_saint_marc_venise.jpg",
     "name": "Un café place Saint Marc à Venise",

@@ -23,6 +23,10 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Ph
 
 var weddingControllers = angular.module('weddingControllers', []);
 
+weddingControllers.controller('Home', ['$scope',
+    function ($scope) {
+    }]);
+
 weddingControllers.controller('GiftListCtrl', ['$scope', 'Gift',
     function ($scope, Gift) {
         $scope.gifts = Gift.query();
@@ -32,8 +36,6 @@ weddingControllers.controller('GiftListCtrl', ['$scope', 'Gift',
         // add an OpenStreetMap tile layer
         L.tileLayer.provider('OpenStreetMap.Mapnik')
             .addTo(map);
-        //L.tileLayer.provider('MapQuestOpen.OSM')
-        //    .addTo(map);
 
         $scope.leaflet_map = map;
     }]);

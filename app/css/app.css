@@ -1,10 +1,78 @@
 /* app css stylesheet */
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC:700);
 
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+    /*padding-top: 20px;*/
+    /*padding-bottom: 20px;*/
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 
 .map {
-  height: 450px;
+    height: 450px;
+}
+
+.intro {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-image: url(../img/ponton01.jpg);
+    background-color: transparent;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 15% 0 15% 0;
+}
+
+.intro .slogan h2 {
+    color: #F0F0F0;
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: 700;
+    background-color: rgba(0, 0, 0, 0);
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 0 none #000;
+    text-shadow: -5px 0 8px #000;
+}
+
+.intro .slogan {
+    text-align: center;
+}
+
+.main-menu.navbar {
+    background-color: transparent;
+    padding-top: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.main-menu.navbar .navbar-right {
+    margin-right: 10%;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.main-menu.navbar-fixed-top {
+    border: none;
+}
+
+.main-menu .navbar-brand {
+    margin-left: 10%;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.main-menu .navbar-brand span {
+    color: #000000;
+    text-transform: capitalize;
+    font-family: 'Amatic SC', cursive;
+    font-weight: 700;
+    font-size: 37px;
 }

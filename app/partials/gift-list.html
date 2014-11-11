@@ -9,8 +9,9 @@
                 <div class="row">
                     <a class="col-md-4" href="#/phones/{{gift.id}}"><img class="img-thumbnail img-responsive" ng-src="{{gift.imageUrl}}"></a>
                     <div class="col-md-8">
-                        <div class="lead">{{gift.snippet}}</div>
-                        <div class="lead"><span style="font-weight: bold;">Prix:</span> {{gift.price}} €</div>
+                        <div class="">{{gift.snippet}}</div>
+                        <div class=""><span style="font-weight: bold;">Prix:</span> {{gift.price}} €</div>
+                        <div class=""><span style="font-weight: bold;">Déjà resérvé:</span> {{gift.booked}} €</div>
                         <div class="progress">
                             <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
                                 0%
