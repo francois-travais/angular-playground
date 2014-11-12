@@ -23,6 +23,16 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Ph
 
 var weddingControllers = angular.module('weddingControllers', []);
 
+weddingControllers.controller('HeaderController', ['$scope', '$location',
+    function ($scope, $location) {
+        $scope.isActive = function (viewLocation) {
+            if ($location.url()) {
+                return $location.url().indexOf(viewLocation) === 0;
+            }
+            return false;
+        }
+    }]);
+
 weddingControllers.controller('Home', ['$scope',
     function ($scope) {
     }]);
