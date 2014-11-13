@@ -8,9 +8,17 @@ body {
     font-family: 'Merriweather', serif;
 }
 
+.preload * {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+}
+
 a {
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
 }
 
@@ -56,10 +64,22 @@ a {
     background: -o-radial-gradient(rgba(0, 0, 0, 0.45), transparent);
     background: -moz-radial-gradient(rgba(0, 0, 0, 0.45), transparent);
     background: radial-gradient(rgba(0, 0, 0, 0.45), transparent);
+    animation-duration: 1s;
 }
 
 .intro .counters .unit {
     font-size: 20px;
+}
+
+.intro .counters .days {
+    animation-delay: 2s;
+}
+
+.intro .counters .hours {
+    animation-delay: 3s;
+}
+.intro .counters .minutes {
+    animation-delay: 4s;
 }
 /*!Intro*/
 
