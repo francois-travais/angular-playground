@@ -1,0 +1,22 @@
+<div class="back-transition" style="margin-bottom: 10px;"></div>
+<div class="container">
+    <div class="row">
+        <leaflet defaults="mapDefaults" center="mapCenter" markers="markers" style="height: 480px;"></leaflet>
+    </div>
+    <div class="row">
+        <div ng-repeat="accommodation in accommodations" class="panel panel-default accommodations">
+            <map-marker lat="accommodation.coordinates[0]" lng="accommodation.coordinates[1]" id="accommodation.id" name="accommodation.name"></map-marker>
+            <div class="panel-heading"><a href="{{accommodation.url}}"><p>{{accommodation.name}}</p></a></div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class=""><span style="font-weight: bold;">Type d'hébergement</span>
+                            {{accommodation.accommodation}}
+                        </div>
+                        <div class=""><span style="font-weight: bold;">Ville</span> {{accommodation.city}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

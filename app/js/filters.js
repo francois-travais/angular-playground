@@ -2,8 +2,10 @@
 
 /* Filters */
 
-angular.module('phonecatFilters', []).filter('checkmark', function() {
-  return function(input) {
-    return input ? '\u2713' : '\u2718';
-  };
-});
+var weddingFilters = angular.module('phonecatFilters', []);
+
+//weddingFilters.filter('checkmark', function() {
+//  return function(input) {
+//    return input ? '\u2713' : '\u2718';
+//  };
+//});

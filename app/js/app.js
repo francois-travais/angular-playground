@@ -2,39 +2,31 @@
 
 /* App Module */
 
-var phonecatApp = angular.module('phonecatApp', [
-  'ngRoute',
-  'phonecatAnimations',
-
-  'phonecatControllers',
-  'phonecatFilters',
-  'phonecatServices',
+var weddingApp = angular.module('weddingApp', [
+    'ngRoute',
+    'leaflet-directive',
 
     'weddingControllers',
     'weddingServices',
     'weddingDirectives'
 ]);
 
-phonecatApp.config(['$routeProvider',
-  function($routeProvider) {
-    $routeProvider.
-      when('/phones', {
-        templateUrl: 'partials/phone-list.html',
-        controller: 'PhoneListCtrl'
-      }).
-      when('/phones/:phoneId', {
-        templateUrl: 'partials/phone-detail.html',
-        controller: 'PhoneDetailCtrl'
-      }).
-        when('/gifts', {
-            templateUrl: 'partials/gift-list.html',
-            controller: 'GiftListCtrl'
-        }).
-        when('/home', {
-          templateUrl: 'partials/home.html',
-          controller: 'Home'
-        }).
-      otherwise({
-        redirectTo: '/home'
-      });
-  }]);
+weddingApp.config(['$routeProvider',
+    function ($routeProvider) {
+        $routeProvider.
+            when('/gifts', {
+                templateUrl: 'partials/gift-list.html',
+                controller: 'GiftListCtrl'
+            }).
+            when('/home', {
+                templateUrl: 'partials/home.html',
+                controller: 'HomeCtrl'
+            }).
+            when('/accommodation', {
+                templateUrl: 'partials/accommodation.html',
+                controller: 'AccommodationCtrl'
+            }).
+            otherwise({
+                redirectTo: '/home'
+            });
+    }]);

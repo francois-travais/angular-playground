@@ -19,6 +19,7 @@ a {
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
 }
 
@@ -33,7 +34,7 @@ a {
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 15% 0 15% 0;
+    padding: 13% 0 13% 0;
     text-align: center;
 }
 
@@ -51,6 +52,7 @@ a {
     background: -webkit-radial-gradient(rgba(0, 0, 0, 0.4), transparent);
     background: -o-radial-gradient(rgba(0, 0, 0, 0.4), transparent);
     background: -moz-radial-gradient(rgba(0, 0, 0, 0.4), transparent);
+    background: -ms-radial-gradient(rgba(0, 0, 0, 0.4), transparent);
     background: radial-gradient(rgba(0, 0, 0, 0.4), transparent);
 }
 
@@ -63,6 +65,7 @@ a {
     background: -webkit-radial-gradient(rgba(0, 0, 0, 0.45), transparent);
     background: -o-radial-gradient(rgba(0, 0, 0, 0.45), transparent);
     background: -moz-radial-gradient(rgba(0, 0, 0, 0.45), transparent);
+    background: -ms-radial-gradient(rgba(0, 0, 0, 0.45), transparent);
     background: radial-gradient(rgba(0, 0, 0, 0.45), transparent);
     animation-duration: 1s;
 }
@@ -123,15 +126,22 @@ a {
 }
 /*!Navigation bar*/
 
-.map {
-    height: 450px;
-}
-
 .abstract {
 }
 
+.accommodations .panel-heading {
+    font-family: 'Amatic SC', cursive;
+}
+
+.accommodations .panel-heading p {
+    font-size: 23px;
+    margin: 0;
+    font-weight: 500;
+
+}
+
 .back-transition {
-    background-image: url(../img/forest01.jpg);
+    background-image: url(../img/ponton01.jpg);
     height: 100px;
     background-position: 50% 50%;
     background-color: transparent;

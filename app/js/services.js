@@ -20,3 +20,10 @@ weddingServices.factory('Gift', ['$resource',
             query: {method: 'GET', params: {giftId: 'gifts'}, isArray: true}
         });
     }]);
+
+weddingServices.factory('Accommodation', ['$resource',
+    function ($resource) {
+        return $resource('accommodations/:accommodationId.json', {}, {
+            query: {method: 'GET', params: {accommodationId: 'accommodation'}, isArray: true}
+        });
+    }]);

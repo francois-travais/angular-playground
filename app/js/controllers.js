@@ -2,25 +2,6 @@
 
 /* Controllers */
 
-var phonecatControllers = angular.module('phonecatControllers', []);
-
-phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
-    function ($scope, Phone) {
-        $scope.phones = Phone.query();
-        $scope.orderProp = 'age';
-    }]);
-
-phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone',
-    function ($scope, $routeParams, Phone) {
-        $scope.phone = Phone.get({phoneId: $routeParams.phoneId}, function (phone) {
-            $scope.mainImageUrl = phone.images[0];
-        });
-
-        $scope.setImage = function (imageUrl) {
-            $scope.mainImageUrl = imageUrl;
-        }
-    }]);
-
 var weddingControllers = angular.module('weddingControllers', []);
 
 weddingControllers.controller('HeaderController', ['$scope', '$location',
@@ -33,7 +14,7 @@ weddingControllers.controller('HeaderController', ['$scope', '$location',
         }
     }]);
 
-weddingControllers.controller('Home', ['$scope',
+weddingControllers.controller('HomeCtrl', ['$scope',
     function ($scope) {
     }]);
 
@@ -41,11 +22,34 @@ weddingControllers.controller('GiftListCtrl', ['$scope', 'Gift',
     function ($scope, Gift) {
         $scope.gifts = Gift.query();
 
-        var map = L.map('map').setView([43.5, 12], 6);
+        $scope.markers = {};
 
-        // add an OpenStreetMap tile layer
-        L.tileLayer.provider('OpenStreetMap.Mapnik')
-            .addTo(map);
+        $scope.mapCenter = {
+            lat: 43.5,
+            lng: 12,
+            zoom: 6
+        };
 
-        $scope.leaflet_map = map;
+        $scope.mapDefaults = {
+            scrollWheelZoom: false,
+            doubleClickZoom: true
+        };
+    }]);
+
+weddingControllers.controller('AccommodationCtrl', ['$scope', 'Accommodation',
+    function ($scope, Accommodation) {
+        $scope.accommodations = Accommodation.query();
+
+        $scope.markers = {};
+
+        $scope.mapCenter = {
+            lat: 46.75,
+            lng: 0.6,
+            zoom: 11
+        };
+
+        $scope.mapDefaults = {
+            scrollWheelZoom: false,
+            doubleClickZoom: true
+        };
     }]);

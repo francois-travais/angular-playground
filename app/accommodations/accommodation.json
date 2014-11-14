@@ -1,0 +1,57 @@
+[
+  {
+    "city": "Châtellerault",
+    "name": "La dulcinière",
+    "accommodation": "Chambres d'hôtes",
+    "id": "dulciniere",
+    "url": "http://www.ladulciniere.fr/",
+    "coordinates": [
+      46.817251,
+      0.548382
+    ]
+  },
+  {
+    "city": "Châtellerault",
+    "name": "La Bergerie",
+    "accommodation": "Chambres d'hôtes",
+    "id": "bergerie",
+    "url": "http://www.week4all.com/activites/info-1497-La+Bergerie+Macmillan.html",
+    "coordinates": [
+      46.807415,
+      0.56136
+    ]
+  },
+  {
+    "city": "Cenon sur Vienne",
+    "name": "Roulotte Chimère",
+    "accommodation": "Chambres d'hôtes",
+    "id": "roulotte",
+    "url": "http://roulotte-chimere.over-blog.com/",
+    "coordinates": [
+      46.753011,
+      0.525517
+    ]
+  },
+  {
+    "city": "Vouneuil-sur-Vienne",
+    "name": "La Pocterie",
+    "accommodation": "Chambres d'hôtes",
+    "id": "pocterie",
+    "url": "http://lapocterie.chambres.free.fr/",
+    "coordinates": [
+      46.702761,
+      0.570518
+    ]
+  },
+  {
+    "city": "Monthoiron",
+    "name": "La maison ronde",
+    "accommodation": "Gîte, 8 à 10 personnes",
+    "id": "maison_ronde",
+    "url": "http://www.lamaisonronde.fr/",
+    "coordinates": [
+      46.732939,
+      0.61778
+    ]
+  }
+]
