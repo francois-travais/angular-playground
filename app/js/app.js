@@ -3,12 +3,15 @@
 /* App Module */
 
 var weddingApp = angular.module('weddingApp', [
+    'angular-loading-bar',
+    'ngAnimate',
     'ngRoute',
     'leaflet-directive',
 
     'weddingControllers',
     'weddingServices',
-    'weddingDirectives'
+    'weddingDirectives',
+    'weddingFilters'
 ]);
 
 weddingApp.config(['$routeProvider',
@@ -25,6 +28,10 @@ weddingApp.config(['$routeProvider',
             when('/accommodation', {
                 templateUrl: 'partials/accommodation.html',
                 controller: 'AccommodationCtrl'
+            }).
+            when('/contact', {
+                templateUrl: 'partials/contact.html',
+                controller: 'ContactCtrl'
             }).
             otherwise({
                 redirectTo: '/home'

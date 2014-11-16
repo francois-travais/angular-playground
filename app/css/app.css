@@ -8,11 +8,18 @@ body {
     font-family: 'Merriweather', serif;
 }
 
+@media (min-width: 768px) {
+    .container {
+        max-width: 730px;
+    }
+}
+
 .preload * {
     -webkit-transition: none !important;
     -moz-transition: none !important;
     -ms-transition: none !important;
     -o-transition: none !important;
+    transition: none !important;
 }
 
 a {
@@ -36,9 +43,14 @@ a {
     background-repeat: no-repeat;
     padding: 13% 0 13% 0;
     text-align: center;
+    margin-bottom: 20px;
 }
 
-.intro .slogan h2 {
+.page-title {
+    padding: 6% 0 1% 0;
+}
+
+.intro h2 {
     color: #F0F0F0;
     font-size: 50px;
     line-height: 60px;
@@ -140,9 +152,11 @@ a {
 
 }
 
-.back-transition {
+.ponton {
     background-image: url(../img/ponton01.jpg);
-    height: 100px;
+}
+
+.background {
     background-position: 50% 50%;
     background-color: transparent;
     background-size: cover;

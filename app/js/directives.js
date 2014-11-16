@@ -3,38 +3,34 @@
 /* Directives */
 var weddingDirectives = angular.module('weddingDirectives', []);
 
-weddingDirectives.directive('mapMarker', [function () {
-    function controller($scope) {
-        console.log($scope);
-        console.log($scope.$parent.$parent.markers);
-
-
-        $scope.$parent.$parent.markers[$scope.id] = {
-            'lat': $scope.lat,
-            'lng': $scope.lng,
-            'title': $scope.name
-        };
-    }
-
-    return {
-        transclude: true,
-        scope: {
-            lat: '=',
-            lng: '=',
-            id: '=',
-            name: '='
-        },
-        restrict: 'E',
-        template: '',
-        replace: true,
-        controller: ["$scope", controller]
-    }
-}]);
+//weddingDirectives.directive('mapMarker', [function () {
+//    function controller($scope) {
+//        $scope.$parent.$parent.markers[$scope.id] = {
+//            'lat': $scope.lat,
+//            'lng': $scope.lng,
+//            'title': $scope.name
+//        };
+//    }
+//
+//    return {
+//        transclude: true,
+//        scope: {
+//            lat: '=',
+//            lng: '=',
+//            id: '=',
+//            name: '='
+//        },
+//        restrict: 'E',
+//        template: '',
+//        replace: true,
+//        controller: ["$scope", controller]
+//    }
+//}]);
 
 weddingDirectives.directive('counter', ['$interval', 'dateFilter', function ($interval, dateFilter) {
     function link(scope, element, attrs) {
         var timeoutId;
-        var targetDate = new Date(2015, 8, 29, 17, 0);
+        var targetDate = new Date(2015, 8, 29, 16, 0);
         var days = $('#days');
         var hours = $('#hours');
         var minutes = $('#minutes');
