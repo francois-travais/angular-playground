@@ -3,11 +3,9 @@
 /* App Module */
 
 var weddingApp = angular.module('weddingApp', [
-    'angular-loading-bar',
-    'ngAnimate',
     'ngRoute',
     'leaflet-directive',
-
+    'ui.bootstrap',
     'weddingControllers',
     'weddingServices',
     'weddingDirectives',

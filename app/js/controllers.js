@@ -16,6 +16,26 @@ weddingControllers.controller('HeaderController', ['$scope', '$location',
 
 weddingControllers.controller('HomeCtrl', ['$scope',
     function ($scope) {
+        $scope.markers = {
+            'alia': {
+                lat: 46.791364,
+                lng: 0.624408,
+                title: 'La ferme Alia',
+                message: '<a href="http://www.lafermealia.fr">La ferme Alia</a>',
+                focus: true
+            }
+        };
+
+        $scope.center = {
+            lat: 46.791364,
+            lng: 0.624408,
+            zoom: 10
+        };
+
+        $scope.mapDefaults = {
+            scrollWheelZoom: false,
+            doubleClickZoom: true
+        };
     }]);
 
 weddingControllers.controller('GiftListCtrl', ['$scope', 'Gift',
@@ -84,48 +104,79 @@ weddingControllers.controller('AccommodationCtrl', ['$scope', 'Accommodation',
         };
     }]);
 
-weddingControllers.controller('ContactCtrl', ['$scope',
-    function ($scope) {
-        $scope.isReplyDisabled = function (reply) {
+weddingControllers.controller('ContactCtrl', ['$scope', '$modal', '$log',
+    function ($scope, $modal, $log) {
+        $scope.openReply = function () {
+
+            var modalInstance = $modal.open({
+                templateUrl: 'partials/components/reply-form.html',
+                controller: 'ReplyFormCtrl'
+            });
+
+            modalInstance.result.then(function () {
+                $log.info('Reply form modal dismissed at: ' + new Date());
+            });
+        };
+
+        $scope.openContact = function () {
+
+            var modalInstance = $modal.open({
+                templateUrl: 'partials/components/contact-form.html',
+                controller: 'ContactFormCtrl'
+            });
+
+            modalInstance.result.then(function () {
+                $log.info('Contact form modal dismissed at: ' + new Date());
+            });
+        };
+    }]);
+
+weddingControllers.controller('ReplyFormCtrl', ['$scope', '$modalInstance', '$log',
+    function ($scope, $modalInstance, $log) {
+        $scope.replyForm = {
+            name: '',
+            email: '',
+            number: 1,
+            comment: ''
+        };
+
+        $scope.isDisabled = function (reply) {
             return !reply.$dirty || reply.$invalid;
         };
 
-        $scope.isContactDisabled = function (contact) {
+        $scope.save = function (reply) {
+            if ($scope.isDisabled(reply)) return;
+            $log('reply form saved');
+
+            reply.$dirty = false;
+            $modalInstance.close('reply form saved');
+        };
+
+        $scope.cancel = function () {
+            $modalInstance.dismiss('cancel');
+        };
+    }]);
+
+weddingControllers.controller('ContactFormCtrl', ['$scope',  '$modalInstance', '$log',
+    function ($scope, $modalInstance) {
+        $scope.contactForm = {
+            name: '',
+            email: '',
+            message: ''
+        };
+
+        $scope.isDisabled = function (contact) {
             return !contact.$dirty || contact.$invalid;
         };
 
-        $scope.saveReply = function (reply) {
-            if ($scope.isReplyDisabled(reply)) return;
-            console.log('reply form saved');
-
-            reply.$dirty = false;
-            resetReply();
-        };
-
-        $scope.saveContact = function (contact) {
-            if ($scope.isContactDisabled(contact)) return;
-            console.log('contact form saved');
-
+        $scope.save = function (contact) {
+            if ($scope.isDisabled(contact)) return;
+            $log('contact form saved');
             contact.$dirty = false;
-            resetContact();
+            $modalInstance.close('contact form saved');
         };
 
-        function resetReply() {
-            $scope.replyForm = {
-                name: '',
-                email: '',
-                number: 1,
-                comment: ''
-            };
-        }
-
-        function resetContact() {
-            $scope.contactForm = {
-                name: '',
-                email: '',
-                message: ''
-            };
-        }
-        resetReply();
-        resetContact();
+        $scope.cancel = function () {
+            $modalInstance.dismiss('cancel');
+        };
     }]);

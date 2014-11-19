@@ -53,5 +53,82 @@
       46.732939,
       0.61778
     ]
+  },
+  {
+    "city": "Sénillet",
+    "name": "Gîtes Gachet",
+    "accommodation": "Gîte, 4 personnes",
+    "id": "gachet",
+    "url": "http://www.gitesdefrance-vienne.com/location-vacances-Gite-a-Senille-742.html",
+    "coordinates": [
+      46.778485,
+      0.630367
+    ]
+  },
+  {
+    "city": "Saint-Sauveur La Foucaudière",
+    "name": "Camping des Petites Minaudières",
+    "accommodation": "Camping",
+    "id": "minaudieres",
+    "url": "http://www.campingminaudieres.com/",
+    "coordinates": [
+      46.820801,
+      0.64657
+    ]
+  },
+  {
+    "city": "Châtellerault",
+    "name": "Hôtel IBIS buget",
+    "accommodation": "Hôtel",
+    "id": "ibis",
+    "url": "http://www.accorhotels.com/fr/hotel-0610-ibis-chatellerault/index.shtml",
+    "coordinates": [
+      46.816487,
+      0.548146
+    ]
+  },
+  {
+    "city": "Châtellerault",
+    "name": "Hôtel B&B",
+    "accommodation": "Hôtel",
+    "id": "bandb",
+    "url": "hhttp://www.hotel-bb.com/fr/hotels/chatellerault.htm",
+    "coordinates": [
+      46.838439,
+      0.541828
+    ]
+  },
+  {
+    "city": "Châtellerault",
+    "name": "Hôtel Nouvelles classe",
+    "accommodation": "Hôtel",
+    "id": "nouvelle_classe",
+    "url": "http://www.hotelnouvelleclasse.com/",
+    "coordinates": [
+      46.841473,
+      0.54609
+    ]
+  },
+  {
+    "city": "Châtellerault",
+    "name": "La villa Richelieu",
+    "accommodation": "Gîte",
+    "id": "richelieu",
+    "url": "http://www.villarichelieu.com/",
+    "coordinates": [
+      46.821692,
+      0.534479
+    ]
+  },
+  {
+    "city": "Châtellerault",
+    "name": "Camp Municipal",
+    "accommodation": "Camping",
+    "id": "camping_municipal",
+    "url": "http://www.campingfrance.com/recherchez-votre-camping/poitou-charentes/vienne/chatellerault/camp-municipal",
+    "coordinates": [
+      46.816487,
+      0.548146
+    ]
   }
 ]
