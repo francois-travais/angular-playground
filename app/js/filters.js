@@ -8,7 +8,6 @@ weddingFilters.filter('accomodationTypeFilter', function () {
     return function (array, expression, comparator, markers) {
         if (!angular.isArray(array)) return array;
 
-        console.log(markers);
         var matchs = [];
         angular.forEach(array, function (el) {
             if (('' + el[comparator]).indexOf(expression) > -1) {

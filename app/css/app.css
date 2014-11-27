@@ -14,20 +14,20 @@ body {
     }
 }
 
-.preload * {
-    -webkit-transition: none !important;
-    -moz-transition: none !important;
-    -ms-transition: none !important;
-    -o-transition: none !important;
-    transition: none !important;
-}
-
-a {
+a, .main-menu .navbar-brand span {
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     -o-transition: all .2s ease-in-out;
     -ms-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
+}
+
+.sticky-top a, .main-menu.sticky-top .navbar-brand span {
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+    -ms-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
 }
 
 /*Intro*/
@@ -69,7 +69,7 @@ a {
 }
 
 .intro .counters .unit,
-.intro .counters .number{
+.intro .counters .number {
     color: #F0F0F0;
     font-size: 34px;
     text-shadow: -5px 0 8px #000;
@@ -93,9 +93,11 @@ a {
 .intro .counters .hours {
     animation-delay: 3s;
 }
+
 .intro .counters .minutes {
     animation-delay: 4s;
 }
+
 /*!Intro*/
 
 /*Navigation bar*/
@@ -108,8 +110,17 @@ a {
     text-decoration: none;
 }
 
+.main-menu.navbar.sticky-top {
+    padding-top: 0px;
+    font-size: 21px;
+}
+
 .main-menu.navbar .navbar-right {
     background-color: rgba(255, 255, 255, 0.7);
+}
+
+.main-menu.navbar.sticky-top .navbar-right {
+    background-color: rgba(161, 205, 129, 0.8);
 }
 
 .main-menu.navbar .navbar-right li > a {
@@ -118,6 +129,10 @@ a {
 
 .main-menu.navbar .navbar-right li.active > a {
     background-color: rgba(255, 255, 255, 0.5);
+}
+
+.main-menu.navbar.sticky-top .navbar-right li.active > a {
+    background-color: rgba(161, 205, 129, 0.8);
 }
 
 .main-menu.navbar-fixed-top {
@@ -129,6 +144,11 @@ a {
     background-color: rgba(255, 255, 255, 0.7);
 }
 
+.main-menu.sticky-top .navbar-brand,
+.main-menu.sticky-top .navbar-brand:hover {
+    background-color: rgba(161, 205, 129, 0.8);
+}
+
 .main-menu .navbar-brand span {
     color: #000000;
     text-transform: capitalize;
@@ -136,6 +156,11 @@ a {
     font-weight: 700;
     font-size: 37px;
 }
+
+.main-menu.sticky-top .navbar-brand span {
+    font-size: 30px;
+}
+
 /*!Navigation bar*/
 
 .abstract {
@@ -162,4 +187,8 @@ a {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+.justify {
+    text-align: justify;
 }

@@ -27,6 +27,29 @@ var weddingDirectives = angular.module('weddingDirectives', []);
 //    }
 //}]);
 
+weddingDirectives.directive('fixedTop', function ($window) {
+    function controller($scope, $element, $attrs) {
+        console.log($window.scrollY);
+        console.log($window);
+
+        angular.element($window).on('scroll', function () {
+            if ($window.scrollY > 100) {
+                if (!$element[0].classList.contains("sticky-top")) {
+                    $element[0].classList.add("sticky-top");
+                    console.log($element[0].classList);
+                }
+            } else {
+                $element[0].classList.remove("sticky-top")
+            }
+        });
+    }
+
+    return {
+        restrict: 'A',
+        controller: controller
+    };
+});
+
 weddingDirectives.directive('counter', ['$interval', 'dateFilter', function ($interval, dateFilter) {
     function link(scope, element, attrs) {
         var timeoutId;

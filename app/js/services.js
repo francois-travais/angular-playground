@@ -2,16 +2,6 @@
 
 /* Services */
 
-var phonecatServices = angular.module('phonecatServices', ['ngResource']);
-
-phonecatServices.factory('Phone', ['$resource',
-    function ($resource) {
-        return $resource('phones/:phoneId.json', {}, {
-            query: {method: 'GET', params: {phoneId: 'phones'}, isArray: true}
-        });
-    }]);
-
-
 var weddingServices = angular.module('weddingServices', ['ngResource']);
 
 weddingServices.factory('Gift', ['$resource',
@@ -21,9 +11,23 @@ weddingServices.factory('Gift', ['$resource',
         });
     }]);
 
-weddingServices.factory('Accommodation', ['$resource',
+weddingServices.factory('AccommodationResource', ['$resource',
     function ($resource) {
-        return $resource('accommodations/:accommodationId.json', {}, {
-            query: {method: 'GET', params: {accommodationId: 'accommodation'}, isArray: true}
+        return $resource('http://localhost:5000/rest/accommodations', {}, {
+            query: {method: 'GET'}
+        });
+    }]);
+
+weddingServices.factory('ContactResource', ['$resource',
+    function ($resource) {
+        return $resource('http://localhost:5000/rest/contact', {}, {
+            send: {method: 'POST'}
+        });
+    }]);
+
+weddingServices.factory('ReplyResource', ['$resource',
+    function ($resource) {
+        return $resource('http://localhost:5000/rest/reply', {}, {
+            send: {method: 'POST'}
         });
     }]);
