@@ -14,15 +14,16 @@ weddingControllers.controller('HeaderController', ['$scope', '$location',
         }
     }]);
 
-weddingControllers.controller('HomeCtrl', ['$scope',
-    function ($scope) {
+weddingControllers.controller('HomeCtrl', ['$scope', 'MapIconMarker',
+    function ($scope, MapIconMarker) {
         $scope.markers = {
             'alia': {
                 lat: 46.791364,
                 lng: 0.624408,
                 title: 'La ferme Alia',
                 message: '<a href="http://www.lafermealia.fr">La ferme Alia</a>',
-                focus: true
+                focus: true,
+                icon: MapIconMarker.icon('img/icons/FermeAlia_map.png')
             }
         };
 
@@ -58,8 +59,8 @@ weddingControllers.controller('GiftListCtrl', ['$scope', 'Gift',
         };
     }]);
 
-weddingControllers.controller('AccommodationCtrl', ['$scope', 'AccommodationResource',
-    function ($scope, AccommodationResource) {
+weddingControllers.controller('AccommodationCtrl', ['$scope', 'AccommodationResource', 'MapIconMarker',
+    function ($scope, AccommodationResource, MapIconMarker) {
         $scope.accommodations = AccommodationResource.query().$promise.then(function (accommodations) {
             console.log(accommodations);
             $scope.accommodations = accommodations.accommodations;
@@ -67,33 +68,29 @@ weddingControllers.controller('AccommodationCtrl', ['$scope', 'AccommodationReso
 
         $scope.types = [
             {
-                value: "",
-                display: "Tous"
+                display: "Hôtel",
+                checked: true
             },
             {
-                value: "Hôtel",
-                display: "Hôtel"
+                display: "Camping",
+                checked: true
             },
             {
-                value: "Camping",
-                display: "Camping"
+                display: "Chambres d'hôtes",
+                checked: true
             },
             {
-                value: "Chambres d'hôtes",
-                display: "Chambres d'hôtes"
-            },
-            {
-                value: "Gîte",
-                display: "Gîte"
+                display: "Gîte",
+                checked: true
             }];
-        $scope.showType = $scope.types[0].value;
 
         $scope.markers = {
             'alia': {
                 lat: 46.791364,
                 lng: 0.624408,
                 title: 'La ferme Alia',
-                message: '<a href="http://www.lafermealia.fr">La ferme Alia</a>'
+                message: '<a href="http://www.lafermealia.fr">La ferme Alia</a>',
+                icon: MapIconMarker.icon('img/icons/FermeAlia_map.png')
             }
         };
 
@@ -138,11 +135,11 @@ weddingControllers.controller('ContactCtrl', ['$scope', '$modal',
 
 weddingControllers.controller('ReplyFormCtrl', ['$scope', '$modalInstance', 'ReplyResource',
     function ($scope, $modalInstance, ReplyResource) {
-        $scope.replyForm = {
+        $scope.reply = {
             name: '',
             email: '',
             adultNb: 1,
-            childNb: 1,
+            childNb: 0,
             comment: ''
         };
 
@@ -154,7 +151,7 @@ weddingControllers.controller('ReplyFormCtrl', ['$scope', '$modalInstance', 'Rep
 
         $scope.save = function (reply) {
             if ($scope.isDisabled(reply)) return;
-            ReplyResource.save(reply).$promise
+            ReplyResource.save($scope.reply).$promise
                 .then(function (response) {
                     console.log("Reply sent: " + response);
                     reply.$dirty = false;
@@ -168,6 +165,30 @@ weddingControllers.controller('ReplyFormCtrl', ['$scope', '$modalInstance', 'Rep
 
         $scope.cancel = function () {
             $modalInstance.dismiss('cancel');
+        };
+
+        $scope.adultPlus = function () {
+            if ($scope.reply.adultNb < 9) {
+                $scope.reply.adultNb += 1;
+            }
+        };
+
+        $scope.adultMinus = function () {
+            if ($scope.reply.adultNb > 0) {
+                $scope.reply.adultNb -= 1;
+            }
+        };
+
+        $scope.childPlus = function () {
+            if ($scope.reply.childNb < 9) {
+                $scope.reply.childNb += 1;
+            }
+        };
+
+        $scope.childMinus = function () {
+            if ($scope.reply.childNb > 0) {
+                $scope.reply.childNb -= 1;
+            }
         };
     }]);
 
@@ -187,7 +208,7 @@ weddingControllers.controller('ContactFormCtrl', ['$scope', '$modalInstance', 'C
 
         $scope.save = function (contact) {
             if ($scope.isDisabled(contact)) return;
-            ContactResource.save(contact).$promise
+            ContactResource.save($scope.contactForm).$promise
                 .then(function (response) {
                     console.log("Contact send: " + response);
                     contact.$dirty = false;

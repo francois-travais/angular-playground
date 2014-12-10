@@ -31,3 +31,15 @@ weddingServices.factory('ReplyResource', ['$resource',
             send: {method: 'POST'}
         });
     }]);
+
+weddingServices.factory('MapIconMarker', function () {
+    var icon = function (iconUrl) {
+        return {
+            iconUrl: iconUrl,
+            iconSize: [32, 37], // size of the icon
+            iconAnchor: [16, 37], // point of the icon which will correspond to marker's location
+            popupAnchor: [0, -30]
+        };
+    };
+    return {icon: icon};
+});

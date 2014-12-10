@@ -8,7 +8,8 @@
     "coordinates": [
       46.817251,
       0.548382
-    ]
+    ],
+    "icon": "img/icons/accommodation/chambre_hote_map.png"
   },
   {
     "city": "Châtellerault",
@@ -19,7 +20,8 @@
     "coordinates": [
       46.807415,
       0.56136
-    ]
+    ],
+    "icon": "img/icons/accommodation/chambre_hote_map.png"
   },
   {
     "city": "Cenon sur Vienne",
@@ -30,7 +32,8 @@
     "coordinates": [
       46.753011,
       0.525517
-    ]
+    ],
+    "icon": "img/icons/accommodation/chambre_hote_map.png"
   },
   {
     "city": "Vouneuil-sur-Vienne",
@@ -41,7 +44,8 @@
     "coordinates": [
       46.702761,
       0.570518
-    ]
+    ],
+    "icon": "img/icons/accommodation/chambre_hote_map.png"
   },
   {
     "city": "Monthoiron",
@@ -52,7 +56,8 @@
     "coordinates": [
       46.732939,
       0.61778
-    ]
+    ],
+    "icon": "img/icons/accommodation/gite_map.png"
   },
   {
     "city": "Sénillet",
@@ -63,7 +68,8 @@
     "coordinates": [
       46.778485,
       0.630367
-    ]
+    ],
+    "icon": "img/icons/accommodation/gite_map.png"
   },
   {
     "city": "Saint-Sauveur La Foucaudière",
@@ -85,18 +91,20 @@
     "coordinates": [
       46.816487,
       0.548146
-    ]
+    ],
+    "icon": "img/icons/accommodation/hotel_map.png"
   },
   {
     "city": "Châtellerault",
     "name": "Hôtel B&B",
     "accommodation": "Hôtel",
     "id": "bandb",
-    "url": "hhttp://www.hotel-bb.com/fr/hotels/chatellerault.htm",
+    "url": "http://www.hotel-bb.com/fr/hotels/chatellerault.htm",
     "coordinates": [
       46.838439,
       0.541828
-    ]
+    ],
+    "icon": "img/icons/accommodation/hotel_map.png"
   },
   {
     "city": "Châtellerault",
@@ -107,7 +115,8 @@
     "coordinates": [
       46.841473,
       0.54609
-    ]
+    ],
+    "icon": "img/icons/accommodation/hotel_map.png"
   },
   {
     "city": "Châtellerault",
@@ -118,7 +127,8 @@
     "coordinates": [
       46.821692,
       0.534479
-    ]
+    ],
+    "icon": "img/icons/accommodation/gite_map.png"
   },
   {
     "city": "Châtellerault",
